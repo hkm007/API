@@ -1,0 +1,16 @@
+{
+  "name": "love_calculator",
+  "version": "1.0.0",
+  "description": "API which calculate percentage of love",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "hkm007",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "ejs": "^3.1.2",
+    "express": "^4.17.1"
+  }
+}
