@@ -10,4 +10,8 @@ app.set('view engine', 'ejs')
 
 app.use(apiRoute)
 
+app.get('/', (req, res) => {
+    res.render("home")
+})
+
 app.listen(5000, () => console.log("Server running on port 5000"))

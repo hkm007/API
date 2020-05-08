@@ -1,27 +1,13 @@
 const express = require('express')
 const router = express.Router()
+const dummyData = require('../database/db')
+const LCS = require('../logics/logic')
 
-function LCS(S1, m, S2, n) {
-    var finalResult;
-    
-    if(m === 0 || n === 0) {
-        finalResult = 0;
-    } else if(S1[m - 1] === S2[n - 1]) { 
-        finalResult = 1 + LCS(S1, m - 1, S2, n - 1);
-    } else {
-        var excludeLastOfS1 = LCS(S1, m - 1, S2, n),
-            excludeLastOfS2 = LCS(S1, m, S2, n - 1);
-
-        finalResult = Math.max(excludeLastOfS1, excludeLastOfS2);
-    }
-    return finalResult;
-}
-
-router.get('/', (req, res) => {
-    res.render("home")
+router.get('/api/dummy', (req, res) => {
+    res.send({"data": dummyData})
 })
 
-router.post('/api', (req, res) => {
+router.post('/api/love', (req, res) => {
     const { person1, person2 } = req.body
 
     if(!person1 || !person2) {
@@ -51,6 +37,38 @@ router.post('/api', (req, res) => {
     const result = {
         "Percentage": percent,
         "Message": msg
+    }
+
+    res.send(result)
+})
+
+router.post('/api/luck', (req, res) => {
+    const { name, day } = req.body
+
+    if(!name || !day) {
+        return res.status(422).send({message: "Enter all details"})
+    }
+
+    if(typeof(name) !== "string" || typeof(day) !== "string") {
+        return res.status(422).send({message: "Enter proper details"})
+    }
+
+    n = name.toLowerCase()
+    d = day.toLowerCase()
+
+    let count = 0
+
+    for(let i = 0; i < n.length; i++) {
+        for(let j = 0; j < d.length; j++) {
+            if(n[i] === d[j]) count++;
+        }
+    }
+
+    let size = Math.min(n.length, d.length)
+    let percent = Math.round((count/size)*100)
+
+    const result = {
+        "Percentage": percent
     }
 
     res.send(result)
