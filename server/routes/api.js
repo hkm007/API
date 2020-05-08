@@ -7,6 +7,14 @@ router.get('/api/dummy', (req, res) => {
     res.send({"data": dummyData})
 })
 
+router.get('/api/dummy/:id', (req, res) => {
+    let data = dummyData.find(x => x._id == req.params.id)
+    if(data != undefined)
+        res.send(data)
+    else 
+        res.send({"message": "Something went wrong"})
+})
+
 router.post('/api/love', (req, res) => {
     const { person1, person2 } = req.body
 
@@ -69,6 +77,40 @@ router.post('/api/luck', (req, res) => {
 
     const result = {
         "Percentage": percent
+    }
+
+    res.send(result)
+})
+
+router.post('/api/string', (req, res) => {
+    const { str } = req.body
+
+    if(!str) {
+        return res.status(422).send({message: "Enter a string"})
+    }
+
+    if(typeof(str) !== "string") {
+        return res.status(422).send({message: "Enter proper string"})
+    }
+    
+    var vowelsCount = 0, consonants = 0;
+    var string = str.toString();
+
+    for(var i = 0; i <= string.length - 1; i++) {
+        if((string.charAt(i).match(/[aeiou]/))){       
+            vowelsCount++;
+        } else if((string.charAt(i).match(/[bcdfghjklmnpqrstvwxyzBCDFGHJKLMNPQRSTVWXYZ]/))){
+            consonants++;
+        }
+    }
+
+    const result = {
+        "lower": str.toLowerCase(),
+        "upper": str.toUpperCase(),
+        "character": str.length,
+        "vowels": vowelsCount,
+        "consonants": consonants,
+        "space": Math.abs(str.length-consonants-vowelsCount)
     }
 
     res.send(result)
