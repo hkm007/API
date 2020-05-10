@@ -4,6 +4,7 @@
   "description": "API which calculate percentage of love",
   "main": "app.js",
   "scripts": {
+    "start": "nodemon app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "hkm007",
@@ -11,6 +12,7 @@
   "dependencies": {
     "body-parser": "^1.19.0",
     "ejs": "^3.1.2",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "nodemon": "^2.0.3"
   }
 }
