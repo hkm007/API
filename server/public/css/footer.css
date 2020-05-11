@@ -1,0 +1,21 @@
+.site-footer{
+    background-color: black;
+    width:100%;
+    padding-top:20px;
+    padding-bottom:15px;
+}
+.copyright-text{
+    text-align: center;
+    color: white;
+}
+
+#footer-color{
+    position: relative;
+    height:8px;
+    width:100%;
+    background-image: linear-gradient(to right, #c471f5 0%, #f30b3d 100%);
+}
+
+#footer-logo{
+    font-style: oblique;
+}

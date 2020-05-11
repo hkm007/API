@@ -3,10 +3,12 @@ const router = express.Router()
 const dummyData = require('../database/db')
 const LCS = require('../logics/logic')
 
+//dummy api route
 router.get('/api/dummy', (req, res) => {
     res.send({"data": dummyData})
 })
 
+//api route for specific id of dummy
 router.get('/api/dummy/:id', (req, res) => {
     let data = dummyData.find(x => x._id == req.params.id)
     if(data != undefined)
@@ -15,6 +17,7 @@ router.get('/api/dummy/:id', (req, res) => {
         res.send({"message": "Something went wrong"})
 })
 
+//api route for love calculator
 router.post('/api/love', (req, res) => {
     const { person1, person2 } = req.body
 
@@ -50,6 +53,7 @@ router.post('/api/love', (req, res) => {
     res.send(result)
 })
 
+//api route for luck prediction
 router.post('/api/luck', (req, res) => {
     const { name, day } = req.body
 
@@ -82,6 +86,7 @@ router.post('/api/luck', (req, res) => {
     res.send(result)
 })
 
+//api route for string features
 router.post('/api/string', (req, res) => {
     const { str } = req.body
 

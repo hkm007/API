@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="./assets/bootstrap/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="./assets/font-awesome/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" type="text/css" href="./css/navbar.css" />
+    <link rel="stylesheet" type="text/css" href="./css/footer.css" />
+    <link rel="stylesheet" type="text/css" href="./css/home.css" />
+    <title>Pingoo API | Developments</title>
+  </head>
+  <body>
+    <%- include('includes/navbar') %>
+
+    <div class="search-bar">
+      <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+          <div class="row" style="padding: 10px;">
+            <div class="col-md-2"></div>
+            <div class="col-md-8" id="search-field">
+              <div class="row top">
+                <div class="col-md-3" id="span-logo">
+                  <span>
+                    <a id="logo-search"><strong>Pingoo API</strong></a>
+                  </span>
+                </div>
+                <div class="col-md-9">
+                  <span id="search-span">
+                    <input
+                      id="search-txt"
+                      type="text"
+                      placeholder="Search our apis..."
+                    />
+                    <a href="./" id="search-btn"
+                      ><img
+                        src="./images/svg/search.svg"
+                        height="39px"
+                        width="34px"
+                    /></a>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-2"></div>
+      </div>
+    </div>
+
+    <div class="get-started">
+      <p id="p1">
+        Get use of unlimited API calls with our <a>Pingoo API Pro</a>
+        <strong>Upgrade to Pro >></strong>
+      </p>
+    </div>
+    <main id="main">
+        <div class = "container my-4">
+            <h2>Developments</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem ad neque voluptates tenetur nisi, sint mollitia facilis est! Ut obcaecati minus quos dolorem cum reprehenderit veniam autem velit hic rerum!</p>
+
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odio harum maxime dolores repudiandae, nisi mollitia neque ratione, autem fugiat sunt esse atque praesentium sint animi totam illo illum. Eaque, optio!</p>
+        </div>
+    </main>
+
+    <%- include('includes/footer') %>
+  </body>
+</html>

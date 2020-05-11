@@ -1,0 +1,17 @@
+.logo-txt{
+    font-style: oblique;
+    color:white;
+    font-size: 40px;
+}
+
+#navbarNav{
+    justify-content: space-around;
+}
+
+#nav-color{
+    position: relative;
+    height:8px;
+    width:100%;
+    background-image: linear-gradient(to right, #c471f5 0%, #f30b3d 100%);
+}
+
