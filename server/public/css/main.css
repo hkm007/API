@@ -2,9 +2,6 @@
     #span-logo{
         display:none;
     }
-    /* #search-field{
-        text-align: center;
-    } */
     #search-span input[type="text"]{
         width: 85%;
         border-radius: 30px;
@@ -18,7 +15,8 @@
 #search-field
 {
     background-color: black;
-    border-radius: 40px;
+    border-radius: 30px;
+    padding-bottom: 3px;
 }
 
 .search-bar{
@@ -27,17 +25,19 @@
 
 #span-logo{
     padding-bottom: 5px;
+    text-align: right;
 }
 
 #logo-search{
     font-style: oblique;
-    font-size: 25px;
+    font-size: 21px;
     color:white;
     padding-left: 5px;
+    text-align: right;
 }
 
 #search-txt{
-    width:91%;
+    width:90%;
     border-radius: 30px;
 }
 
